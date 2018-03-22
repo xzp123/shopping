@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>商品分类</title>
+    <link rel='stylesheet' href='/stylesheets/head.css' />
+    <link rel='stylesheet' href='/stylesheets/category.css' />
+    <script src="../javascripts/jquery.js"></script>
+</head>
+<body>
+<% include public_top.ejs%>
+<div class="main">
+<!--商品类型-->
+<div class="category_all">
+    <ul>
+        <li>
+            <span>
+                <a href="?category_id=<%= category_id%>" class="cate"><%= category_p %></a>
+            </span>
+            <div class="c_category" id="c1">
+                <% category_list.forEach(function(cate){ %>
+                <a href="?category_id=<%= cate.id %>"><%= cate.category %></a>
+                <% }) %>
+            </div>
+        </li>
+        <li>
+            <span>风格</span>
+            <div class="c_category" id="c2">
+                <% category_style.forEach(function(sty){ %>
+                <a href="?category_id=<%= category_id %>&style_id=<%= sty.id %>&product_type_id=<%= category_type_id %>&price=<%= category_price %>"><%= sty.style %></a>
+                <% }) %>
+            </div>
+        </li>
+        <li class="type">
+            <span>类型</span>
+            <div class="c_category" id="c3">
+                <% category_type.forEach(function(type){ %>
+                <a href="?category_id=<%= category_id %>&style_id=<%= category_style_id %>&product_type_id=<%= type.id %>&price=<%= category_price %>"><%= type.product_type %></a>
+                <% }) %>
+            </div>
+        </li>
+        <li>
+            <span>价格</span>
+            <div class="c_category" id="c4">
+                <% price_list.forEach(function(price){ %>
+                <a href="?category_id=<%= category_id %>&style_id=<%= category_style_id %>&product_type_id=<%= category_type_id %>&price=<%= price.price%>"><%= price.price%></a>
+                <% }) %>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--筛选的商品详情-->
+<div class="list_cond">
+    <div class="list_cond_l">
+        <a class="desc">综合</a>
+        <a>价格</a>
+    </div>
+</div>
+<div class="list_goods">
+    <% goods_list.forEach(function(goods){ %>
+    <div class="goods">
+        <div class="img_bg">
+            <a class="img_bg_link" href="/product?product_name=<%= goods.product_name %>">
+                <img src="<%= goods.product_image_good %>"></a>
+        </div>
+        <h3><a href="/product?product_name=<%= goods.product_name %>"><%= goods.product_desc%></a></h3>
+        <span class="goods_price">￥<%= goods.product_price%></span>
+        <button onclick="add_cart('<%= goods.product_name %>')">加入购物车</button>
+    </div>
+    <% }) %>
+</div>
+</div>
+<!--底部-->
+<% include public_bottom.ejs%>
+</body>
+
+<script src="../javascripts/head.js"></script>
+<script src="../javascripts/category_search.js"></script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <title>南方家具</title>
+  <link rel='stylesheet' href='/stylesheets/head.css' />
+  <link rel='stylesheet' href='/stylesheets/index.css' />
+  <script src="../javascripts/jquery.js"></script>
+</head>
+<body>
+<% include public_top.ejs%>
+<!--中间轮播图-->
+<div class="index_banner">
+  <div class="banner_list">
+      <% banner_image.forEach(function(image){ %>
+    <a href="/category/?category_name=<%= image.style%>&style_id=<%= image.style_id%>">
+      <img src="<%= image.banner_image %>">
+    </a>
+      <% }) %>
+  </div>
+  <div class="banner_num">
+    <ul>
+        <% banner_image.forEach(function(){ %>
+      <li></li>
+        <% }) %>
+    </ul>
+  </div>
+</div>
+<!--中间部分-->
+<% content_style.forEach(function(style){ %>
+<div class="w" style="background-image:url('<%= style.style_bgimage%>');">
+  <h3 class="title">
+    <em><%= style.style %>家具</em>
+    <i>style</i>
+  </h3>
+  <div class="style_content">
+    <div class="main">
+      <a href="/category/?category_name=<%= style.style %>&style_id=<%= style.id %>">
+        <img width="800px" height="480px" src="<%= style.style_bigimage%>">
+      </a>
+    </div>
+    <div class="side">
+      <div class="side_r">
+        <h3><span>相关搭配单品</span></h3>
+        <ul>
+            <% content_image.forEach(function(image){ %>
+            <%if(image.style_id== style.id ){ %>
+            <li >
+              <a href="/product?product_name=<%= image.product_name %>">
+                <img width="100px" height="100px" src="<%= image.product_image_good %>">
+              </a>
+              <div class="price">¥<%= image.product_price %>.00</div>
+            </li>
+            <%}%>
+            <%})%>
+        </ul>
+      </div>
+      <div class="side_f"><h3><span>推荐品牌</span></h3><img src="<%= style.pinpai_p%>"><img src="<%= style.pinpai_c%>">
+      </div>
+    </div>
+  </div>
+</div>
+<% }) %>
+<!--底部-->
+<% include public_bottom.ejs%>
+</body>
+
+<script src="../javascripts/head.js"></script>
+<script src="../javascripts/banner.js"></script>
+</html>

@@ -1,0 +1,106 @@
+.cart_title .add_address_btn{
+    position: absolute;
+    top:20px;
+    left:310px;
+}
+.cart_title .add_address_btn input{
+    outline: none;
+    border: none;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #f50;
+    color:#fff;
+}
+.shouhuo_address,.wuliu,.zhifu{
+    display: block;
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.shouhuo_address ul li{
+    display: block;
+    width: 235px;
+    height: 130px;
+    float: left;
+    border: 1px dashed #f3e0c4;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fefef4;
+    cursor: pointer;
+}
+.shouhuo_address ul li.check{
+    border: 1px double #d81e06;
+    background: url(../images/地址选择.png) 224px 120px no-repeat ;
+}
+.shouhuo_address .name_phone{
+    font-weight: 700;
+}
+.shouhuo_address div,textarea{
+    font-size: 14px;
+}
+.shouhuo_address .youbian{
+    margin-top: 20px;
+    float: left;
+}
+.shouhuo_address .address_caozuo{
+    margin-top: 20px;
+    margin-right: 10px;
+    float: right;
+}
+.wuliu ul li{
+    width: 180px;
+    float: left;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.wuliu ul li.check{
+    border: 1px double #d81e06;
+    background: url(../images/选中.png) 163px 30px no-repeat ;
+}
+.wuliu ul li i{
+    background:url(../images/kuaidi.png) no-repeat;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    vertical-align: middle;
+    overflow: hidden;
+    margin: 5px 10px;
+}
+.wuliu ul li span{
+    font-size: 16px;
+}
+.zhifu ul li{
+    width: 180px;
+    float: left;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.zhifu img{
+    float: left;
+    width: 54px;
+    height: 36px;
+    overflow: hidden;
+    margin: 5px;
+}
+.zhifu ul li span{
+    float: left;
+    margin-top: 13px;
+    font-size: 16px;
+}
+.zhifu ul li.check{
+    border: 1px double #d81e06;
+    background: url(../images/选中.png) 163px 30px no-repeat ;
+}
+.liuyan label{
+    font-size: 14px;
+    color: #333;
+    margin-left: 10px;
+}
+.liuyan input{
+    outline: none;
+    width:450px;
+    height: 17px;
+}
+

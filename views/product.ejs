@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品详情</title>
+    <link rel='stylesheet' href='/stylesheets/head.css' />
+    <link rel='stylesheet' href='/stylesheets/product.css' />
+    <script src="../javascripts/jquery.js"></script>
+    <script src="../javascripts/product_desc.js"></script>
+</head>
+<body>
+<% include public_top.ejs%>
+<div class="main">
+<!--商品详情    -->
+<div class="product_box">
+    <div class="box">
+        <div class="tb-booth tb-pic nt">
+            <img src="<%= product_image_n[0] %>" rel="<%= product_image_b[0] %>" class="jqzoom" />
+        </div>
+        <ul class="tb-thumb" id="thumblist">
+            <%for(i=0;i<product_image_length;i++){%>
+            <li>
+                <div class="xt">
+                    <img src="<%= product_image_s[i] %>" mid="<%= product_image_n[i] %>" big="<%= product_image_b[i] %>">
+                </div>
+            </li>
+           <%}%>
+        </ul>
+    </div>
+    <div class="product">
+        <h1 class="title_name"><%= product_name %></h1>
+        <div class="title_desc"><%= product_desc%></div>
+        <div class="price">
+            <div class="price_title">商城价:</div>
+            <div class="price_txt">￥<%= product_price %></div>
+        </div>
+        <div class="table">
+            <dl class="spec">
+                <dt>规格</dt>
+                <dd><%= product_spec %></dd>
+            </dl>
+            <dl class="number">
+                <dt>数量</dt>
+                <dd>
+                    <div class="row">
+                        <input type="text" value="1" class="goodsNumber">
+                        <div class="click">
+                            <a class="add" onselectstart="return false">+</a>
+                            <a class="minus" onselectstart="return false">-</a>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="btn">
+                <a onclick="add_cart('<%= product_name %>')">加入购物车</a>
+            </dl>
+        </div>
+    </div>
+    <div class="product_desc">
+        <div class="desc_nav"><span>商品详情</span></div>
+        <div class="desc_img">
+            <% desc_images.forEach(function(desc_img){ %>
+            <img src="<%= desc_img.desc_image%>">
+            <% })%>
+        </div>
+    </div>
+</div>
+</div>
+<!--底部-->
+<% include public_bottom.ejs%>
+</body>
+<script src="../javascripts/head.js"></script>
+<script src="../javascripts/product.js"></script>
+</html>

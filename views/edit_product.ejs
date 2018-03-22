@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>产品分类</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/stylesheets/adminStyle.css" rel="stylesheet" type="text/css" />
+    <script src="../javascripts/jquery.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="page-title">
+        <span class="modular"><i></i><em>修改商品</em></span>
+    </div>
+    <form action="/edit_product_post"
+          enctype="multipart/form-data" method="post">
+        <table class="list-style">
+            <tr>
+                <th><h4>商品编号:</h4></th>
+                <td class="txt"><input style="border: none;" name="product_id" type="text" readonly="readonly"  value="<%= product.product_id %>"></td>
+            </tr>
+
+            <tr>
+                <th><h4>商品名称:</h4></th>
+                <td class="txt"><input name="product_name" type="text" value="<%= product.product_name %>" ></td>
+            </tr>
+
+            <tr>
+                <th><h4>商品规格:</h4></th>
+                <td class="txt"><input name="product_spec" type="text" value="<%= product.product_spec %>" ></td>
+            </tr>
+
+            <tr>
+                <th><h4>单价:</h4></th>
+                <td class="txt"><input name="price" type="text" value="<%= product.product_price %>" ></td>
+            </tr>
+
+            <tr>
+                <th><h4>商品描述:</h4></th>
+                <td class="txt"><input name="product_desc" type="text" value="<%= product.product_desc %>" ></td>
+            </tr>
+        </table>
+
+        <!-- BatchOperation -->
+        <div style="overflow:hidden;">
+            <!-- Operation -->
+            <div class="BatchOperation fr">
+                <input type="submit" value="修改商品" class="btnStyle"/>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

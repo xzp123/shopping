@@ -1,0 +1,132 @@
+.nav_box_l{
+    display: none;
+}
+/*商品类型*/
+.main{
+    width: 1210px;
+    margin: 10px auto 0;
+}
+.category_all{
+    margin-top: 30px;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid #D6D6D6;
+    border-bottom: 0 none;
+    background: #FAFAFA;
+}
+.category_all li{
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #D6D6D6;
+}
+.category_all span{
+    width: 110px;
+    text-align: center;
+    background: #F0F0F0;
+    display:inline-block;
+}
+.c_category{
+    display: inline-block;
+}
+.category_all a{
+    margin-right: 10px;
+    line-height: 20px;
+    padding: 5px 5px;
+}
+.category_all a:hover{
+    color: #fff;
+    border-radius: 3px;
+    background: #FF8A00;
+}
+.category_all  a.cate:hover{
+    color: initial;
+    background: initial;
+}
+.cur{
+    color: #fff;
+    border-radius: 3px;
+    background: #FF8A00;
+}
+/*筛选的商品详情*/
+.list_cond{
+    height: 53px;
+    background: #EDEDED;
+    margin: 20px auto 30px;
+    padding: 0 20px 0 10px;
+}
+.list_cond_l{
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 17px;
+    width: 520px;
+    position: relative;
+}
+.list_cond_l a{
+    padding: 0 20px;
+    border-right: 1px solid #D6D6D6;
+    display: block;
+    float: left;
+    font-size: 14px;
+    position: relative;
+}
+.desc{
+    color:#ff9000;
+}
+.list_goods{
+    overflow: hidden;
+    padding-left: 4px;
+}
+.goods{
+    width: 292px;
+    height: 333px;
+    float: left;
+    margin-right: 5px;
+    color: #716C6A;
+    position: relative;
+    margin-bottom: 10px;
+    padding-top: 2px;
+    border: 2px solid #f5f5f5;
+}
+.goods:hover{
+    border: 2px solid lightgrey;
+}
+.img_bg{
+    position: relative;
+    display: block;
+    padding-top: 0;
+    text-align: center;
+}
+.img_bg_link{
+    display: inline-block;
+    width: 290px;
+    height: 216px;
+    overflow: hidden;
+}
+.list_goods div.goods h3{
+    position: relative;
+    height: 35px;
+    font-size: 100%;
+    width: 289px;
+    padding-left: 5px;
+    margin: 0 auto;
+}
+.goods span,.goods button{
+    width: 106px;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+    display: inline-block;
+    margin-left: 28px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.goods button{
+    border: none;
+    background-color: #716C6A;
+    color: #fff;
+}
+.goods_price{
+    font-size: 20px;
+    color:#ff9000;
+}

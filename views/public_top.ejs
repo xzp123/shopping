@@ -1,0 +1,68 @@
+<!-- 导航栏部分 -->
+<div class="nav">
+  <div class="menu">
+    <ul class="fl menu_l">
+      <li class="nav_li"><a href="/">Hi,欢迎来到南方家具商城！</a></li>
+      <li class="nav_li"><a href="#"><%= username.username %></a></li>
+      <li class="nav_li"><a href="/users">免费注册</a></li>
+    </ul>
+    <ul class="fr menu_r">
+      <li class="nav_li"><i class="grzx"></i><a onclick="usermain()" >个人中心</a>
+      </li>
+      <li class="nav_li"><i class="gwc"></i><a onclick="cart()">购物车</a>
+      </li>
+      <li class="nav_li"><i class="lxkf"></i><a href="#">联系客服</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- 搜索栏部分 -->
+<div class="head">
+  <div class="top">
+    <div class="fl logo">
+    <img  width="100%" height="100%" src="../images/logo.jpg">
+    </div>
+    <div class="fl search">
+      <input type="text" class="search_input">
+      <button class="fr search_btn">搜索</button>
+    </div>
+  </div>
+</div>
+<!--左边导航-->
+<div class="head_nav">
+  <div class="nav_list">
+    <div class="nav_box">
+      <h3>商品分类</h3>
+      <div class="cate_menu">
+        <div class="nav_box_l"><ul>
+                <% for( i=0;i<7;i++){ %>
+            <li>
+                <% for( j=0;j<3;j++){ %>
+              <a href="#"></a>
+                <% } %><i class="jt"></i></li><% } %>
+          </ul></div>
+        <div class="nav_box_r">
+            <% for( i=0;i<7;i++){ %>
+          <ul>
+            <li>
+                <% for( j=0;j<3;j++){ %>
+              <em></em>
+              <div></div><% } %>
+            </li>
+          </ul><% } %>
+        </div>
+      </div>
+    </div>
+    <ul class="size_navs">
+      <li><a href="/" style="color: #ff9000;">首页</a></li>
+      <li><a href="/category/?category_name=现代&style_id=1">现代馆</a></li>
+      <li><a href="/category/?category_name=欧式&style_id=2">欧式馆</a></li>
+      <li><a href="/category/?category_name=中式&style_id=3">中式馆</a></li>
+      <li><a href="/category/?category_name=儿童&style_id=4">儿童馆</a></li>
+      <li><a href="/category/?category_name=北欧&style_id=5">北欧馆</a></li>
+      <li><a href="/category/?category_name=地中海&style_id=6">地中海</a></li>
+      <li><a href="/category/?category_name=简美&style_id=7">简美馆</a></li>
+    </ul>
+  </div>
+</div>
+

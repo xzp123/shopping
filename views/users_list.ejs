@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>商品列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/stylesheets/adminStyle.css" rel="stylesheet" type="text/css" />
+    <script src="../javascripts/jquery.js"></script>
+    <script src="../javascripts/public.js"></script>
+    <style type="text/css">
+        textarea{
+            border:0;
+            background-color:transparent;
+            color: #666464;
+            height: auto;
+            resize:none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="page-title">
+        <span class="modular fl"><i></i><em>用户列表</em></span>
+    </div>
+    <table class="list-style Interlaced">
+        <tr>
+            <th style="width:10%">用户编号</th>
+            <th>用户名</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>出生年月日</th>
+            <th>邮箱</th>
+            <th>住址</th>
+            <th>操作</th>
+        </tr>
+        <% users_list.forEach(function(user){%>
+        <tr>
+            <td class="center">
+     <span>
+     <i><%= user.id %></i>
+     </span>
+            </td>
+            <td class="center">
+                <span>
+                    <i><%= user.username %></i>
+                </span>
+            </td>
+
+            <td class="center">
+                <span>
+                    <i><%= user.name %></i>
+                </span>
+            </td>
+
+            <td class="center">
+                <span>
+                    <i><%= user.sex %></i>
+                </span>
+            </td>
+
+            <td class="center">
+                <span>
+                    <%= user.birthday %>
+                </span>
+            </td>
+
+            <td class="center">
+                <span>
+                    <%= user.email %>
+                </span>
+            </td>
+
+            <td >
+                <textarea style="width:100%" readonly="readonly"><%= user.address %></textarea>
+            </td>
+
+            <td class="center" style="text-align:center">
+                <a onclick="del_user('<%= user.username %>')" title="删除"><img src="../images/删除.png"/></a>
+            </td>
+        </tr>
+        <% }) %>
+
+    </table>
+    <!-- BatchOperation -->
+    <div style="overflow:hidden;">
+        <!-- turn page -->
+        <div class="turnPage center fr">
+            <a>第一页</a>
+            <a>1</a>
+            <a>最后一页</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+.success{
+    width: 600px;
+    margin: 0 auto;
+}
+.success .tf_success{
+    margin-top: 50px;
+    padding: 0 0 10px 10px;
+    font-size: 20px;
+}
+.success .success_desc{
+    border: 1px solid #e6e6e6;
+    text-align: left;
+    padding: 10px 0 50px 20px;
+
+}
+.success .success_desc p{
+    padding: 15px;
+    font-size: 14px;
+}
+.success .success_desc span{
+    padding: 15px;
+    font-size: 18px;
+    float: right;
+}
+.success .success_desc span em{
+    font-style: normal;
+    color: #CF000E;
+    font-size: 20px;
+}
+.success .go_index{
+    background: #CF000E;
+    color: #fff;
+    float: right;
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    width: 155px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 40px;
+    border: 1px solid #CF000E;
+    clear: both;
+}

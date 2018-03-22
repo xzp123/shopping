@@ -1,0 +1,105 @@
+.goodsNumber{
+    width: 50px;
+    height: 19px;
+    line-height: 18px;
+    padding: 4px 0;
+    margin: 0;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    float: left;
+    border: 1px solid #E5E5E5;
+    border-right: none;
+}
+.click a{
+    text-align: center;
+    border: 1px solid #E5E5E5;
+    display: block;
+    width: 16px;
+    height: 13px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 13px;
+}
+.click a.add{
+    border-bottom: none;
+}
+.btn button{
+    width: 181px;
+    height: 45px;
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+.cart_title{
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #eee;
+}
+.cart_title span{
+    display: block;
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+    color: rgb(85, 85, 85);
+    padding: 25px 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.shoppingcart {
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.shoppingcart th{
+    height: 50px;
+    line-height: 50px;
+    background: #eee;
+    font-weight: normal;
+    color: #676767;
+    border-right: 1px solid #fff;
+}
+.shoppingcart td{
+    height: 100px;
+    background: #fefef4;
+    padding: 10px 0;
+    border-bottom:1px dotted #CCC;
+    text-align: center;
+}
+.shoppingcart .frist{
+    width: 30px;
+    border-right: 0;
+    text-align: center;
+}
+.cart_btn{
+    width: 980px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cart_btn a{
+    float: right;
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    width: 155px;
+    height: 40px;
+    margin-left: 10px;
+    border: 1px solid #CF000E;
+}
+.cart_btn  a.check{
+    background: #CF000E;
+    color:#fff;
+}
+.cart_btn a.back{
+    background: #fff;
+    color:#CF000E;
+}
+.shoppingcart .cart_allnumber,.all_price{
+    color:#CF000E;
+    font-size: 15px;
+}

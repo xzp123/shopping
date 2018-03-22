@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>商品列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/stylesheets/adminStyle.css" rel="stylesheet" type="text/css" />
+    <script src="../javascripts/jquery.js"></script>
+    <script src="../javascripts/public.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="page-title">
+        <span class="modular fl"><i></i><em>管理员列表</em></span>
+    </div>
+    <table class="list-style Interlaced">
+        <tr>
+            <th style="width:10%">管理员编号</th>
+            <th>管理员</th>
+            <th>操作</th>
+        </tr>
+        <% admin_list.forEach(function(admin){%>
+        <tr>
+            <td class="center">
+     <span>
+     <i><%= admin.id %></i>
+     </span>
+            </td>
+            <td class="center">
+     <span>
+      <i><%= admin.name %></i>
+     </span>
+            </td>
+            <td class="center" style="text-align:center">
+                <a onclick="admin_name('<%= admin.name %>')" title="编辑"><img src="../images/修改.png"/></a>
+                <a onclick="del_admin('<%= admin.name %>')" title="删除"><img src="../images/删除.png"/></a>
+            </td>
+        </tr>
+        <% }) %>
+
+    </table>
+    <!-- BatchOperation -->
+    <div style="overflow:hidden;">
+        <!-- turn page -->
+        <div class="turnPage center fr">
+            <a>第一页</a>
+            <a>1</a>
+            <a>最后一页</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

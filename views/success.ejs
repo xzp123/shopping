@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单提交成功</title>
+    <link rel='stylesheet' href='/stylesheets/head.css' />
+    <link rel='stylesheet' href='/stylesheets/success.css' />
+    <script src="../javascripts/jquery.js"></script>
+
+</head>
+<body>
+<!-- 导航栏部分 -->
+<div class="nav">
+    <div class="menu">
+        <ul class="fl menu_l">
+            <li class="nav_li"><a href="/">Hi,欢迎来到南方家具商城！</a></li>
+            <li class="nav_li"><a href="#"><%= username.username %></a></li>
+            <li class="nav_li"><a href="/users">免费注册</a></li>
+        </ul>
+        <ul class="fr menu_r">
+            <li class="nav_li"><i class="grzx"></i><a onclick="usermain()" >个人中心</a>
+                <!--<ul class="nav_li_sub"></ul>-->
+            </li>
+            <li class="nav_li"><i class="gwc"></i><a onclick="cart()">购物车</a>
+                <!--<ul class="nav_li_sub"></ul>-->
+            </li>
+            <li class="nav_li"><i class="lxkf"></i><a href="#">联系客服</a>
+                <!--<ul class="nav_li_sub">-->
+                <!--<li>1</li>-->
+                <!--<li>2</li>-->
+                <!--<li>3</li>-->
+                <!--</ul>-->
+            </li>
+        </ul>
+    </div>
+</div>
+<!--下单详情 -->
+<div class="success">
+    <div class="tf_success"><span><%= zhifuzhuangtai %></span></div>
+    <div class="success_desc">
+        <p>收货人：<%= name %></p>
+        <p>联系电话：<%= phone %></p>
+        <p>收货地址：<%= address %></p>
+        <span>付款金额：<em><%= price %></em></span>
+    </div>
+    <div>
+        <a href="/" class="go_index" >返回首页</a>
+    </div>
+</div>
+<!--底部-->
+<div class="footer">
+    <div class="foot_info">
+        <div class="wrap">
+            <div class="server">
+                <dl>
+                    <dt>关于南方家具</dt>
+                    <dd>
+                        <a href="#">公司简介</a>
+                        <a href="#">媒体聚焦</a>
+                        <a href="#">体验馆</a>
+                        <a href="#">诚聘英才</a>
+                        <a href="#">招商加盟</a>
+                        <a href="#">联系我们</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>新手指南</dt>
+                    <dd>
+                        <a href="#">注册新用户</a>
+                        <a href="#">会员级别</a>
+                        <a href="#">金币说明</a>
+                        <a href="#">订购家具流程</a>
+                        <a href="#">体验馆购买指导</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>配送安装</dt>
+                    <dd>
+                        <a href="#">收货指南</a>
+                        <a href="#">体验馆服务费</a>
+                        <a href="#">物流配送</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>售后服务</dt>
+                    <dd>
+                        <a href="#">45天无理由退换货</a>
+                        <a href="#">如何申请退款</a>
+                        <a href="#">维修补件说明</a>
+                        <a href="#">贵就赔</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>购物保障</dt>
+                    <dd>
+                        <a href="#">正品保证</a>
+                        <a href="#">注册协议</a>
+                        <a href="#">隐私保护</a>
+                        <a href="#">免责声明</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="foot_buttom">
+                <p class="friend_link">友情链接：                </p>
+                <p>
+                    <a  href="#">南方家具官网</a>
+                    <span>|</span>
+                    <a  href="#">招商加盟</a>
+                    <span>|</span>
+                    <a  href="#">网站声明</a>
+                    <span>|</span>
+                    <a  href="#">联系我们</a>
+                    <span>|</span>
+                    <a  href="#">站点地图</a>
+                    <span>|</span>
+                    <a  href="#">友情链接</a>
+                </p>
+                <p><a href="#" >闽ICP备XXXX号</a>©2017-2018南方家具集团股份有限公司</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../javascripts/head.js"></script>
+</html>

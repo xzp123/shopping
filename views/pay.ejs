@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>确认订单</title>
+    <link rel='stylesheet' href='/stylesheets/head.css' />
+    <link rel='stylesheet' href='/stylesheets/usermain.css' />
+    <link rel='stylesheet' href='/stylesheets/shoppingcart.css' />
+    <link rel='stylesheet' href='/stylesheets/pay.css' />
+    <script src="../javascripts/jquery.js"></script>
+
+</head>
+<body>
+<!-- 导航栏部分 -->
+<div class="nav">
+    <div class="menu">
+        <ul class="fl menu_l">
+            <li class="nav_li"><a href="/">Hi,欢迎来到南方家具商城！</a></li>
+            <li class="nav_li"><a href="#"><%= username.username %></a></li>
+            <li class="nav_li"><a href="/users">免费注册</a></li>
+        </ul>
+        <ul class="fr menu_r">
+            <li class="nav_li"><i class="grzx"></i><a onclick="usermain()" >个人中心</a>
+                <!--<ul class="nav_li_sub"></ul>-->
+            </li>
+            <li class="nav_li"><i class="gwc"></i><a onclick="cart()">购物车</a>
+                <!--<ul class="nav_li_sub"></ul>-->
+            </li>
+            <li class="nav_li"><i class="lxkf"></i><a href="#">联系客服</a>
+                <!--<ul class="nav_li_sub">-->
+                <!--<li>1</li>-->
+                <!--<li>2</li>-->
+                <!--<li>3</li>-->
+                <!--</ul>-->
+            </li>
+        </ul>
+    </div>
+</div>
+<!--订单信息-->
+<div class="cart_title" >
+    <span style="font-size: 19px;">确认收货地址</span>
+    <div class="add_address_btn">
+    <input type="button" value="添加新地址">
+    </div>
+</div>
+<div class="shouhuo_address">
+    <ul>
+        <% address_list.forEach(function(address){%>
+        <li>
+            <div class="name_phone">
+            <span><%= address.name %></span>
+            <span><%= address.phone %></span>
+            </div>
+            <div class="address">
+            <textarea style="width: 100%;text-align:left;" readonly="readonly" rows="4"><%= address.address %></textarea>
+            </div>
+            <div class="youbian">
+            <span>邮编：</span>
+            <span><%= address.youbian %></span>
+            </div>
+            <div class="address_caozuo">
+                <a onclick="edit_address('<%= address.id %>','<%= username.username %>','<%= address.name%>','<%= address.phone%>','<%= address.address%>','<%= address.youbian%>')">编辑</a>
+                <span>|</span>
+                <a onclick="del_address('<%= address.id %>','<%= username.username %>')">删除</a>
+            </div>
+        </li>
+        <% }) %>
+    </ul>
+</div>
+<div class="address_bg" style="display: none;"></div>
+<div class="address_add" style="display: none;" >
+    <div class="add_address">
+        <h4>添加新地址</h4>
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    <em>*</em>
+                    <span>收货人：</span>
+                </td>
+                <td>
+                    <input type="text" style="width: 80%;" placeholder="请准确填写真实姓名">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <em>*</em>
+                    <span>详细地址：</span>
+                </td>
+                <td>
+                    <input type="text" style="width: 170%;" placeholder="请填写详细地址">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <em>*</em>
+                    <span>邮政编码：</span>
+                </td>
+                <td>
+                    <input type="text" style="width: 60%;" placeholder="请填写邮政编码">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <em>*</em>
+                    <span>电话/手机：</span>
+                </td>
+                <td>
+                    <input type="text" placeholder="请填写联系电话或手机">
+            <tr>
+                <td colspan="2">
+                    <input style=" margin-left: 30%;" class="add_save" type="button" onclick="add_address('<%= username.username %>')" value="保存">
+                    <input style=" margin-left: 30%;" class="add_save" type="button" onclick="save_edit('<%= username.username %>')" value="修改">
+                </td>
+                <td colspan="2">
+                    <input class="add_save" type="button"  value="取消">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div style="clear:both;"></div>
+<div class="cart_title" style="border: 0;">
+    <span style="font-size: 19px;">选择物流</span>
+</div>
+<div class="wuliu">
+    <ul>
+        <li><i style="background-position:0px -180px"></i><span>顺丰</span></li>
+        <li><i style="background-position:0px -576px"></i><span>韵达</span></li>
+        <li><i style="background-position:0px -1008px"></i><span>申通</span></li>
+        <li><i style="background-position:0px -324px"></i><span>中通</span></li>
+        <li><i style="background-position:0px -468px"></i><span>圆通</span></li>
+    </ul>
+</div>
+<div style="clear:both;"></div>
+<div class="cart_title" style="border: 0;">
+    <span style="font-size: 19px;">选择支付方式</span>
+</div>
+<div class="zhifu">
+    <ul>
+        <li style="margin-left: 0;"><img src="../images/zhifubao.jpg"><span>支付宝</span></li>
+        <li style="margin-left: 0;"><img src="../images/weizhifu.jpg"><span>微信</span></li>
+    </ul>
+</div>
+<div style="clear:both;"></div>
+<div class="cart_title" style="border: 0;">
+    <span style="font-size: 19px;">确认订单信息</span>
+</div>
+<table class="shoppingcart">
+    <tbody>
+    <tr>
+        <th style="" colspan="3">商品</th>
+        <th style="width:8%">单价</th>
+        <th style="width:15%">数量</th>
+        <th style="width:8%">金额</th>
+    </tr>
+    </tbody>
+    <tbody class="cart_product">
+    <% shoppingcart.forEach(function(cart){%>
+    <tr>
+        <td colspan="2"><img width="90px" height="58px" src="<%= cart.product_image_good%>" title="<%= cart.product_name%>"></td>
+        <td style="text-align: left;padding-left: 10px;"><%= cart.product_desc%></td>
+        <td class="c_price">￥<%= cart.product_price%></td>
+        <td style="padding-left: 40px;">
+            <input type="text" readOnly="true" class="goodsNumber" value=" <%= number[cart.product_name]  %>" style="border:0;">
+        </td>
+        <td class="money p_price<%= cart.product_id %>">￥<%= cart.product_price*number[cart.product_name] %></td>
+    </tr>
+    <% }) %>
+    </tbody>
+    <tbody>
+    <th colspan="8" style="text-align: right">
+        <div style="float: left;" class="liuyan">
+            <label>买家留言:&nbsp</label>
+            <input type="text" placeholder="选填"/>
+        </div>
+        <span>合计:</span>
+        <span class="all_price" style="padding-right: 10px">0.00</span>
+    </th>
+    </tbody>
+</table>
+<div class="cart_btn">
+    <a style="margin-top: 30px;" class="check" onclick="pay()">提交订单</a>
+</div>
+<!--底部-->
+<div class="footer">
+    <div class="foot_info">
+        <div class="wrap">
+            <div class="server">
+                <dl>
+                    <dt>关于南方家具</dt>
+                    <dd>
+                        <a href="#">公司简介</a>
+                        <a href="#">媒体聚焦</a>
+                        <a href="#">体验馆</a>
+                        <a href="#">诚聘英才</a>
+                        <a href="#">招商加盟</a>
+                        <a href="#">联系我们</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>新手指南</dt>
+                    <dd>
+                        <a href="#">注册新用户</a>
+                        <a href="#">会员级别</a>
+                        <a href="#">金币说明</a>
+                        <a href="#">订购家具流程</a>
+                        <a href="#">体验馆购买指导</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>配送安装</dt>
+                    <dd>
+                        <a href="#">收货指南</a>
+                        <a href="#">体验馆服务费</a>
+                        <a href="#">物流配送</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>售后服务</dt>
+                    <dd>
+                        <a href="#">45天无理由退换货</a>
+                        <a href="#">如何申请退款</a>
+                        <a href="#">维修补件说明</a>
+                        <a href="#">贵就赔</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>购物保障</dt>
+                    <dd>
+                        <a href="#">正品保证</a>
+                        <a href="#">注册协议</a>
+                        <a href="#">隐私保护</a>
+                        <a href="#">免责声明</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="foot_buttom">
+                <p class="friend_link">友情链接：                </p>
+                <p>
+                    <a  href="#">南方家具官网</a>
+                    <span>|</span>
+                    <a  href="#">招商加盟</a>
+                    <span>|</span>
+                    <a  href="#">网站声明</a>
+                    <span>|</span>
+                    <a  href="#">联系我们</a>
+                    <span>|</span>
+                    <a  href="#">站点地图</a>
+                    <span>|</span>
+                    <a  href="#">友情链接</a>
+                </p>
+                <p><a href="#" >闽ICP备XXXX号</a>©2017-2018南方家具集团股份有限公司</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../javascripts/head.js"></script>
+<script src="../javascripts/shoppingcart.js"></script>
+</html>

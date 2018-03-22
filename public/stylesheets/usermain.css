@@ -1,0 +1,356 @@
+.wrap{
+    width: 1210px;
+    margin: 0 auto;
+    position: relative;
+    padding: 45px 0;
+    overflow: hidden;
+}
+.wrap .center_l {
+    float: left;
+    width: 190px;
+    height: 405px;
+    border: 1px solid #DEDEDE;
+    background: #fff;
+}
+.wrap .center_l dl {
+    line-height: 30px;
+}
+.wrap .center_l dt {
+    color: #666;
+    font-weight: bold;
+    padding-left: 10px;
+    background: #F5F5F5;
+}
+.wrap .center_l dd {
+    line-height: 35px;
+    padding-left: 60px;
+}
+.wrap .center_l dd a i {
+    font-style: normal;
+    display: none;
+}
+.wrap .center_l .current {
+    color: #ff6c00;
+    font-weight: bold;
+}
+.wrap .center_l .current i {
+    display: inline;
+}
+.wrap .center_l dd a:hover {
+    text-decoration: none;
+    color: #ff6c00;
+    font-weight: bold;
+}
+.wrap .center_l dd a:hover i {
+    display: inline;
+}
+.wrap .center_r {
+    float: right;
+    width: 1000px;
+}
+.center_r .my_desc{
+    display: none;
+}
+.center_r .block{
+    display: block;
+}
+.center_r h3 {
+    font-size: 14px;
+}
+.center_r .my_desc_list {
+    margin: 10px 0;
+    border: 1px solid #DEDEDE;
+}
+table {
+    border-collapse: collapse;
+}
+.center_r .my_desc_list tr {
+    background: #F7F7F7;
+    padding: 5px 0;
+}
+.center_r .my_desc_list th {
+    height: 38px;
+    color: #808080;
+    border-top: 1px solid #DEDEDE;
+    border-bottom: 1px solid #DEDEDE;
+}
+.center_r .my_desc_list  td {
+    position: relative;
+    text-align: center;
+    border-top: 1px solid #E6E6E6;
+    line-height: 40px;
+    background-color: #fff;
+}
+.center_r .my_desc .add_address {
+    border: 1px solid #DEDEDE;
+    background: #fff;
+    overflow: hidden;
+}
+.center_r .my_desc em {
+    font-style: normal;
+}
+.center_r .my_desc .add_address h4 {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    background: #F7F7F7;
+}
+.center_r .my_desc .add_address table {
+    margin: 35px 40px;
+}
+.center_r .my_desc .add_address em {
+    color: #ff6000;
+}
+.center_r .my_desc .add_address td {
+    height: 60px;
+}
+.center_r .my_desc .add_address .rece span {
+    letter-spacing: 4.2px;
+}
+.center_r .my_desc .add_address input[type='text']{
+    height: 25px;
+    line-height: 25px;
+    padding-left: 5px;
+    vertical-align: middle;
+    border: 1px solid #B3B3B3;
+}
+.center_r .my_desc .add_address .add_save {
+    margin-left: 30%;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 130px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    background: #ff6000;
+    border-radius: 5px;
+}
+.center_r .set_pwd{
+    padding: 40px 40px 70px 40px;
+    margin-top: 10px;
+    border: 1px solid #dedede;
+    background: #fff;
+}
+.center_r .set_pwd  li {
+    margin-bottom: 10px;
+}
+.center_r .set_pwd  li span {
+    letter-spacing: 8px;
+}
+.center_r .set_pwd  li span.diff {
+    letter-spacing: 0;
+}
+.center_r .set_pwd  input[type='password'] {
+    height: 25px;
+    line-height: 25px;
+    vertical-align: middle;
+    padding-left: 5px;
+    border: 1px solid #B3B3B3;
+}
+.center_r .set_pwd  li.set_btn {
+    margin-top: 30px;
+}
+.center_r .set_pwd  li.set_btn input[type="button"] {
+    border: none;
+    cursor: pointer;
+    width: 130px;
+    height: 30px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    background: #FF6000;
+}
+.center_r .my_info{
+    margin-top: 10px;
+    padding: 30px 0 30px 55px;
+    border: 1px solid #DEDEDE;
+    background: #fff;
+}
+.center_r .my_info li {
+    margin-bottom: 12px;
+}
+.center_r .my_info input[type='text']{
+    height: 25px;
+    vertical-align: middle;
+    line-height: 25px;
+    padding-left: 5px;
+    border: 1px solid #B3B3B3;
+}
+.center_r .my_info  li.sex span {
+    letter-spacing: 4px;
+}
+.center_r .my_info  .save {
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 130px;
+    height: 35px;
+    margin-top: 40px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    background: #FF6000;
+}
+/*编辑收货地址弹窗*/
+.address_bg{
+    z-index: 10000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+}
+.address_add{
+    z-index: 10001;
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    width: 500px;
+    height: 400px;
+    margin-bottom: -200px;
+    margin-left: -250px;
+    background: #fff;
+}
+.address_add .add_address {
+    border: 1px solid #DEDEDE;
+    background: #fff;
+    overflow: hidden;
+}
+.address_add em {
+    font-style: normal;
+}
+.address_add .add_address h4 {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    background: #F7F7F7;
+}
+.address_add .add_address table {
+    margin: 35px 40px;
+}
+.address_add .add_address em {
+    color: #ff6000;
+}
+.address_add .add_address td {
+    height: 60px;
+}
+.address_add .add_address  span {
+    letter-spacing: 4.2px;
+}
+.address_add .add_address input[type='text']{
+    height: 25px;
+    line-height: 25px;
+    padding-left: 5px;
+    vertical-align: middle;
+    border: 1px solid #B3B3B3;
+}
+.address_add .add_address .add_save {
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    background: #ff6000;
+    border-radius: 5px;
+}
+/*我的订单*/
+.my_desc .p1,.my_desc .p2{
+    text-align:left;
+    line-height: 16px;
+}
+.my_desc .p1{
+    margin-top:10px;
+}
+.my_desc .p1:hover{
+    color: #ff4200;
+}
+.my_desc .p2{
+    color: #9C9C9C;
+}
+.my_desc .caozuo_btn a{
+    background-color: #66b6ff;
+    display: inline-block;
+    color: #fff;
+    height: 28px;
+    line-height: 26px;
+    padding: 0 12px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.my_desc .caozuo_btn a:hover{
+    background-color: #118adb;
+    border-color: #118adb;
+}
+.quzhifu{
+    z-index: 10001;
+    position: fixed;
+    bottom: 60%;
+    left: 50%;
+    width: 500px;
+    height: 300px;
+    margin-bottom: -200px;
+    margin-left: -250px;
+    background: #fff;
+}
+.quzhifu .zhifu{
+    background: #fff;
+    overflow: hidden;
+}
+.quzhifu .zhifu h4{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    background: #F7F7F7;
+}
+.zhifu ul li{
+    border: 1px solid #DEDEDE;
+    width: 180px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+.zhifu img{
+    float: left;
+    width: 54px;
+    height: 36px;
+    overflow: hidden;
+    margin: 5px;
+}
+.zhifu ul li span{
+    float: left;
+    margin-top: 13px;
+    font-size: 16px;
+}
+.zhifu ul li.check{
+    border: 1px double #d81e06;
+    background: url(../images/选中.png) 163px 30px no-repeat ;
+}
+.quzhifu .add_save{
+    float: left;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    background: #ff6000;
+    border-radius: 5px;
+    margin:50px 0 0 100px;
+}

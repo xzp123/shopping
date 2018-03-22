@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>订单列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/stylesheets/adminStyle.css" rel="stylesheet" type="text/css" />
+    <script src="../javascripts/jquery.js"></script>
+    <script src="../javascripts/public.js"></script>
+    <style type="text/css">
+        textarea{
+            border:0;
+            background-color:transparent;
+            color: #666464;
+            height: auto;
+            resize:none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="page-title">
+        <span class="modular fl"><i></i><em>订单列表</em></span>
+    </div>
+    <table class="list-style Interlaced">
+        <tr>
+            <th style="width:6%">订单编号</th>
+            <th style="width:10%">商品名</th>
+            <th>数量</th>
+            <th>快递</th>
+            <th>收货人</th>
+            <th style="width:10%">联系电话</th>
+            <th>收货地址</th>
+            <th>留言</th>
+            <th>状态</th>
+            <th>用户名</th>
+            <th>操作</th>
+        </tr>
+        <% success_list.forEach(function(success){%>
+        <tr>
+            <td class="center">
+     <span>
+     <i><%= success.id %></i>
+     </span>
+            </td>
+            <td class="center pic-area"><i><%= success.product_name %></i></td>
+            <td class="center">
+     <span>
+      <i><%= success.number %></i>
+     </span>
+            </td>
+            <td class="center">
+     <span>
+      <i><%= success.wuliu %></i>
+     </span>
+            </td>
+            <td class="center">
+     <span>
+      <i><%= success.name %></i>
+     </span>
+            </td>
+            <td class="center">
+                <span><%= success.phone %></span>
+            </td>
+            <td >
+                <textarea style="width:100%" readonly="readonly"><%= success.address %></textarea>
+            </td>
+
+            <td>
+                <textarea style="width:100%" readonly="readonly"><%= success.other %></textarea>
+            </td>
+            <td class="center">
+                <%if(success.zhifu=='支付宝'){%>
+                <span>已支付</span>
+                <%}else{%>
+                <span>待支付</span>
+                <%}%>
+            </td>
+            <td class="center pic-area"><i><%= success.user_name %></i></td>
+            <td class="center" style="text-align:center">
+                <a onclick="del_success('<%= success.id %>','<%= success.user_name %>')" title="删除"><img src="../images/删除.png"/></a>
+            </td>
+        </tr>
+        <% }) %>
+
+    </table>
+    <!-- BatchOperation -->
+    <div style="overflow:hidden;">
+        <!-- turn page -->
+        <div class="turnPage center fr">
+            <a>第一页</a>
+            <a>1</a>
+            <a>最后一页</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

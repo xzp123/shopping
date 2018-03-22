@@ -1,0 +1,119 @@
+/*中间轮播图*/
+.index_banner {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    min-width: 1190px;
+}
+.banner_list{
+    position: absolute;
+    left: 50%;
+    margin-left: -690px;
+}
+.index_banner .banner_list a {
+    position: absolute;
+    width: 1370px;
+    height: 450px;
+    display: none;
+}
+.index_banner .banner_list img{
+    width:1370px;
+}
+.index_banner .banner_num {
+    position: absolute;
+    width: 140px;
+    height: 30px;
+    left: 50%;
+    margin-left: -44px;
+    bottom: 10px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: hsla(0,0%,100%,.3);
+}
+.index_banner .banner_num .current {
+    background-color: #fff;
+    opacity: .9;
+}
+.index_banner .banner_num ul {
+    margin: 9px 0 0 6px;
+}
+.index_banner .banner_num li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 3px 0 0;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    opacity: .7;
+    cursor: pointer;
+}
+/*中间部分*/
+.w .title{
+    padding: 38px 0 3px;
+    height: 70px;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+    text-align: center;
+}
+.w .title i{
+    padding-top: 4px;
+    color: #cdcac3;
+    font-family: Aparajita;
+    font-style: italic;
+    display: block;
+}
+.w .style_content{
+    width: 1210px;
+    padding: 10px 0;
+    margin: 0 auto;
+    border-top: 2px solid #484544;
+    overflow: hidden;
+}
+.style_content .main{
+    width: 800px;
+    margin-right: 10px;
+    float: left;
+}
+.style_content .side{
+    width: 400px;
+    float: left;
+}
+.style_content .side .side_r{
+    width: 400px;
+    height: 310px;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    float: left;
+    background-color: #fff;
+    overflow: hidden;
+}
+.side h3{
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    font-weight: 300;
+}
+.side_r ul li{
+    float: left;
+    margin: 0 25px 10px 0;
+}
+.side_r .price{
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #3a3a3a;
+    font-weight: 700;
+}
+.style_content .side .side_f{
+    width: 400px;
+    height: 160px;
+    padding-left: 25px;
+    float: left;
+    background-color: #fff;
+}
+.side_f img{
+    float: left;
+    margin: 0 25px 10px 0;
+}

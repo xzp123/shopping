@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>新增管理员</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/stylesheets/adminStyle.css" rel="stylesheet" type="text/css" />
+    <script src="../javascripts/jquery.js"></script>
+    <script src="../javascripts/public.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="page-title">
+        <span class="modular"><i></i><em>新增管理员</em></span>
+    </div>
+
+    <table class="list-style">
+        <tr>
+            <th><h4>管理员名称:</h4></th>
+            <td class="txt"><input class="admin_name" type="text" ></td>
+        </tr>
+
+        <tr>
+            <th><h4>密码:</h4></th>
+            <td class="txt"><input class="pwd1"  type="password" ></td>
+        </tr>
+
+        <tr>
+            <th><h4>确认密码:</h4></th>
+            <td class="txt"><input class="pwd2" type="password" ></td>
+        </tr>
+
+    </table>
+
+    <!-- BatchOperation -->
+    <div style="overflow:hidden;">
+        <!-- Operation -->
+        <div class="BatchOperation fr">
+            <input onclick="add_admin()" type="button" value="确认添加" class="btnStyle" />
+        </div>
+    </div>
+</div>
+</body>
+</html>

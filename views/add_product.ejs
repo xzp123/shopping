@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>产品分类</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/stylesheets/adminStyle.css" rel="stylesheet" type="text/css" />
+    <script src="../javascripts/jquery.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="page-title">
+        <span class="modular"><i></i><em>添加商品</em></span>
+    </div>
+    <form action="/add_product_post"
+          enctype="multipart/form-data" method="post">
+    <table class="list-style">
+        <tr>
+            <th><h4>商品名称:</h4></th>
+            <td class="txt"><input name="product_name" type="text" ></td>
+        </tr>
+
+        <tr>
+            <th><h4>类型:</h4></th>
+            <td class="txt">
+                <select class="category_p" name="category_p">
+                    <% category_p.forEach(function(cate_p){%>
+                    <option  value="<%= cate_p.id %>"><%= cate_p.category %></option>
+                    <% }) %>
+                </select>
+                <select class="category_c" name="category_c">
+                    <% category_c.forEach(function(cate_c){%>
+                    <option  value="<%= cate_c.id %>"><%= cate_c.category %></option>
+                    <% }) %>
+                </select>
+                <select class="category_c" name="style">
+                    <% style.forEach(function(sty){%>
+                    <option  value="<%= sty.id %>"><%= sty.style %></option>
+                    <% }) %>
+                </select>
+                <select class="category_c" name="type">
+                    <% type.forEach(function(typ){%>
+                    <option  value="<%= typ.id %>"><%= typ.product_type %></option>
+                    <% }) %>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <th><h4>商品规格:</h4></th>
+            <td class="txt"><input name="product_spec" type="text" ></td>
+        </tr>
+
+        <tr>
+            <th><h4>单价:</h4></th>
+            <td class="txt"><input name="price" type="text" ></td>
+        </tr>
+
+        <tr>
+            <th><h4>商品描述:</h4></th>
+            <td class="txt"><input name="product_desc" type="text" ></td>
+        </tr>
+
+        <tr>
+            <th><h4>商品分类展示图：</h4></th>
+            <td>
+                <input type="file"  name="img_upload" multiple="multiple" id="img1">
+                <label for="img_upload">(最多选择1张)</label>
+            </td>
+        </tr>
+
+        <tr>
+            <th><h4>商品详情小图：</h4></th>
+            <td>
+                <input type="file"  name="img_upload_s" multiple="multiple">
+                <label for="img_upload_s">(最少2张,最多选择3张)</label>
+            </td>
+        </tr>
+
+        <tr>
+            <th><h4>商品详情中图：</h4></th>
+            <td>
+                <input type="file"  name="img_upload_n" multiple="multiple">
+                <label for="img_upload_n">(最少2张,最多选择3张)</label>
+            </td>
+        </tr>
+
+        <tr>
+            <th><h4>商品详情大图：</h4></th>
+            <td>
+                <input type="file"  name="img_upload_b" multiple="multiple">
+                <label for="img_upload_b">(最少2张,最多选择3张)</label>
+            </td>
+        </tr>
+
+        <tr>
+            <th><h4>商品大图：</h4></th>
+            <td>
+                <input type="file" name="img_upload_desc" multiple="multiple">
+                <label for="img_upload_b">(最少2张)</label>
+            </td>
+        </tr>
+    </table>
+
+    <!-- BatchOperation -->
+    <div style="overflow:hidden;">
+        <!-- Operation -->
+        <div class="BatchOperation fr">
+            <input type="submit" value="添加商品" class="btnStyle"/>
+        </div>
+    </div>
+    </form>
+</div>
+</body>
+</html>

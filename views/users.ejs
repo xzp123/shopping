@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>用户登录</title>
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+    <link rel='stylesheet' href='/stylesheets/head.css' />
+    <script src="javascripts/jquery.js"></script>
+  </head>
+  <body>
+  <div class="login_top">
+      <img  width="25%" height="100%" src="../images/logo.jpg">
+      <div class="fr">
+          <a href="/htmls/adminLogin.html" class="fl">管理员登录</a>
+          <a href="/" class="fl">返回首页</a>
+      </div>
+  </div>
+  <div class="login_content">
+    <div class="login_r">
+    <div class="login_box">
+        <div class="login_box_tit">
+            <a id="login_tab" class="title select" >用户登录</a>
+            <a id="reg_tab" class="title">新用户注册</a>
+        </div>
+      <div class="login_box_con">
+        <div class="login">
+            <input type="text" class="username" placeholder="手机号/邮箱地址">
+            <input type="password" class="password" placeholder="登录密码">
+            <input type="button" class="login_btn" value="登录">
+            <a href="#">忘记密码</a>
+        </div>
+        <div class="register" style="display: none;">
+            <input type="text" class="username" placeholder="手机号/邮箱地址">
+            <input type="password" class="password" placeholder="请设置密码">
+            <input type="password" class="password2" placeholder="请确认密码">
+            <input type="button" class="register_btn" value="注册">
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <!--底部-->
+  <% include public_bottom.ejs%>
+  </body>
+  <script src="javascripts/users.js"></script>
+</html>
